@@ -8,49 +8,74 @@
             <br>
             Last Name: <input type="text" id="lname">
             <br>
-            Mark1: <input id="mark1" type="text">
+            Mark1: <input id= "mark1" type="text">
             <br>
-            Mark2: <input id = mark2 type="text">
+            Mark2: <input id = "mark2" type="text">
             <br>
-            Mark3: <input id = mark3 type="text">
+            Mark3: <input id = "mark3" type="text">
             <br>
-            <button onclick="Validate">Validate</button>
-            <input type="button" onclick="Result()" value="print result">
+            <input type ="button" onclick="ValidateTxt()" value = "Validate">
+            <input type="button" onclick="printResult()" value="print result">
          </form>
          <br>
          <br>
         <p id="result"></p>
+        <p> <span id= "resultspan" style="color:red"></span></p>
         <br>
         <br>
         <script>
-                  function Validate() {
-            event.preventDefault();
-            var n = document.form.numbers.value;
-  
-                if (isNaN(n)) {
-                 document.getElementById("fname")
-                         .innerHTML ="Please enter Numeric value";
-                return false;
-                } else {
-                document.getElementsByName("lname")
-                        .innerHTML = "Numeric value is: " + n;
-                 return true;
-                  }   
-                  }
-        </script>
-        
-        <script>
+ 
+
+            function ValidateTxt() {
+                var fname = document.getElementById("fname");
+                var lname = document.getElementById("lname");
+                var mark1 = document.getElementById("mark1");
+                var mark2 = document.getElementById("mark2");
+                var mark3 = document.getElementById("mark3");
+                
+                
+                if(fname.value.length == 0 ||lname.value.length == 0 || mark1.value.length == 0 || mark2.value.length == 0 || mark3.value.length == 0)
+                {
+                    document.getElementById("resultspan").innerHTML = "must input more info";
+                    document.getElementById("result").innerHTML = "";
+
+                }
+                else if (isNaN(fname.value) && isNaN(lname.value) && !isNaN(mark1.value) && !isNaN(mark2.value) && !isNaN(mark3.value)) 
+                {
+                 document.getElementById("result").innerHTML = "all valid";
+                 document.getElementById("resultspan").innerHTML = "";
+                } 
+                else{
+                    document.getElementById("resultspan").innerHTML = "must input correct info";
+                    document.getElementById("result").innerHTML = "";
+                }
+                
+            }
     
-            function Result(){
-                var num1 = document.getElementById("mark1").value;
-                var num2 = document.getElementById("mark2").value;
-                var num3 = document.getElementById("mark3").value;
-                ans = num1*num2*num3;
-                document.getElementById("result").innerHTML = ans;
+    
+            function printResult(){
+                var num1 = (document.getElementById("mark1").value)*1;
+                var num2 = (document.getElementById("mark2").value)*1;
+                var num3 = (document.getElementById("mark3").value)*1;
+
+                ans =((num1)+(num2)+(num3))/3;
+                
+                if(ans >= 90){
+                     description="Awesome"
+                }
+                else if(ans >= 80){
+                    description="very good"
+                }
+                else if(ans >= 50){
+                    description="OK"
+                }
+                else {
+                    description="Fail"
+                }
+                
+                document.getElementById("result").innerHTML = "your average is "+  ans +"  "+ description; 
             }
 
         </script>
-    <p>hello</p>
-        
     </body>
 </html>
