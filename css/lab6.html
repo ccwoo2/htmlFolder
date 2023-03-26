@@ -1,0 +1,56 @@
+<html>
+    <head><title>this is lab6</title></head>
+    <body>
+    
+        <h1>lab 6 starts</h1>
+        <form>
+            First Name: <input type="text" id="fname">
+            <br>
+            Last Name: <input type="text" id="lname">
+            <br>
+            Mark1: <input id="mark1" type="text">
+            <br>
+            Mark2: <input id = mark2 type="text">
+            <br>
+            Mark3: <input id = mark3 type="text">
+            <br>
+            <button onclick="Validate">Validate</button>
+            <input type="button" onclick="Result()" value="print result">
+         </form>
+         <br>
+         <br>
+        <p id="result"></p>
+        <br>
+        <br>
+        <script>
+                  function Validate() {
+            event.preventDefault();
+            var n = document.form.numbers.value;
+  
+                if (isNaN(n)) {
+                 document.getElementById("fname")
+                         .innerHTML ="Please enter Numeric value";
+                return false;
+                } else {
+                document.getElementsByName("lname")
+                        .innerHTML = "Numeric value is: " + n;
+                 return true;
+                  }   
+                  }
+        </script>
+        
+        <script>
+    
+            function Result(){
+                var num1 = document.getElementById("mark1").value;
+                var num2 = document.getElementById("mark2").value;
+                var num3 = document.getElementById("mark3").value;
+                ans = num1*num2*num3;
+                document.getElementById("result").innerHTML = ans;
+            }
+
+        </script>
+    
+        
+    </body>
+</html>
