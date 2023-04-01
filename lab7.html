@@ -1,0 +1,26 @@
+<html1>
+    <head>
+        <title>Lab7</title>        
+    </head>
+
+    <body>
+        <input type="button" onclick="showImage1()" value="Chrsitmas">
+        <input type="button" onclick="showImage2()" value="Halloween">
+        <input type="button" onclick="showImage3()" value="Easter">
+        <br>
+        <img id="image" src="" width="200" height="200">
+
+        <script>
+            function showImage1(){
+                document.getElementById("image").src = "image/christmas.jpg"
+            }
+            function showImage2(){
+                document.getElementById("image").src = "image/halloween.jpg"
+            }
+            function showImage3(){
+                document.getElementById("image").src = "image/easter.jpg"
+            }
+
+        </script>
+    </body>
+</html1>
