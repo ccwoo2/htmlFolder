@@ -1,0 +1,73 @@
+<html1>
+    <head>
+        <title>Assignment2</title>
+    </head>
+    <style>
+        td{
+            text-align: center;
+            font-weight: bold;
+        }
+        #hover:hover{
+            background-color: yellow;
+        }
+        #click:active{
+            background-color: green;
+        }
+
+    </style>
+
+    <body>
+        <table>
+            <tr><td>Room rentals:</td><td><input onkeyup="total()" type="text" id="rental" name="rental" value="0"></td></tr>
+            <tr><td>Food:</td><td><input type="text" onkeyup="total()" id="food" name="food" value="0"></td></tr>
+            <tr><td>Entertainment:</td><td><input onkeyup="total()" type="text"  id="entertainment" name="entertainment" value="0"></td></tr>
+            <tr><td>Total:</td><td><input type="text" id="total" name="total" value="0"></td></tr>
+            <tr><td>With Tax:</td><td><input type="text" id="tax" name="tax" value="0"></td></tr>
+        </table>
+
+        <h4>Canada</h4>
+  
+        <p>Canada</p>
+
+     
+        <h4>Capital</h4>
+    
+        <p id="capital">OTTAWA</p>
+        <input onclick="hide()" type="button" name="hide" id="hide" value="Hide capital name">
+        <br>
+        <input onclick="show()" type="button" name="show" id="show" value="Show capital name">
+        <br>
+        <input onclick="toggle()" type="button" name="toggle" id="toggle" value="Toggle">
+        <h4 id="hover">Hover on this paragraph for Yellow  </h4>
+      
+        <h4 id="click">Click on this paragraph for Green example</h4>
+
+    </body>
+    <script>
+        function total(){
+
+            var rental = (document.getElementById("rental").value)*1;
+            var food = (document.getElementById("food").value)*1;
+            var entertainment = (document.getElementById("entertainment").value)*1;
+            var total= (rental) + (food) + (entertainment);
+            var tax = total*1.13;
+
+            document.getElementById("total").value =total;
+            document.getElementById("tax").value = tax;    
+        }
+        function hide(){
+            document.getElementById("capital").style.display ="none"
+        }
+        function show(){
+            document.getElementById("capital").style.display ="block"
+        }
+        function toggle(){
+            if (document.getElementById("capital").style.display ==="none"){
+                document.getElementById("capital").style.display ="block"
+            }
+            else{
+                document.getElementById("capital").style.display ="none"
+            }
+        }
+    </script>
+</html1>
